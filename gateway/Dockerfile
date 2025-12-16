@@ -1,5 +1,5 @@
 # Étape 1 : Utilisation de Maven pour construire le fichier JAR
-FROM maven:3.8.4-openjdk-17 AS builder
+FROM maven:3.9-eclipse-temurin-17 AS builder
 WORKDIR /app
 COPY ./pom.xml ./
 COPY ./src ./src
