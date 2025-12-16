@@ -46,6 +46,7 @@ pipeline {
                                                 sonar:sonar \
                                                 -Dsonar.projectKey=car \
                                                 -Dsonar.projectName=car \
+                                                -Dsonar.host.url=http://127.0.0.1:9000 \
                                                 -DskipTests
                                             """
                                         }
@@ -79,6 +80,7 @@ pipeline {
                                                 sonar:sonar \
                                                 -Dsonar.projectKey=client \
                                                 -Dsonar.projectName=client \
+                                                -Dsonar.host.url=http://127.0.0.1:9000 \
                                                 -DskipTests
                                             """
                                         }
