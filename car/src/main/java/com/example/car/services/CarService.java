@@ -27,7 +27,8 @@ public class CarService {
         return cars.stream().map((Car car) -> mapToCarResponse(car, clients)).toList();
     }
 
-    // this function allow the change the Car Entity to A Model that we will send ot the client side using the @Builder Annotation
+    // this function allow the change the Car Entity to A Model that we will send ot
+    // the client side using the @Builder Annotation
     private CarResponse mapToCarResponse(Car car, Client[] clients) {
         Client foundClient = Arrays.stream(clients)
                 .filter(client -> client.getId().equals(car.getClient_id()))
@@ -38,11 +39,10 @@ public class CarService {
                 .id(car.getId())
                 .brand(car.getBrand())
                 .client(foundClient)
-                .matricue(car.getMatricule())
+                .matricule(car.getMatricule())
                 .model(car.getModel())
                 .build();
     }
-
 
     public CarResponse findById(Long id) throws Exception {
         Car car = carRepository.findById(id).orElseThrow(() -> new Exception("Invalid Car Id"));
@@ -51,7 +51,7 @@ public class CarService {
                 .id(car.getId())
                 .brand(car.getBrand())
                 .client(client)
-                .matricue(car.getMatricule())
+                .matricule(car.getMatricule())
                 .model(car.getModel())
                 .build();
     }
