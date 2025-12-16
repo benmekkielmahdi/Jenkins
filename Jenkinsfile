@@ -48,7 +48,7 @@ pipeline {
                                                 -Dsonar.projectName=car \
                                                 -Dsonar.host.url=http://127.0.0.1:9000 \
                                                 -Dsonar.login=admin \
-                                                -Dsonar.password=admin \
+                                                -Dsonar.password=root \
                                                 -DskipTests
                                             """
                                         }
@@ -84,7 +84,7 @@ pipeline {
                                                 -Dsonar.projectName=client \
                                                 -Dsonar.host.url=http://127.0.0.1:9000 \
                                                 -Dsonar.login=admin \
-                                                -Dsonar.password=admin \
+                                                -Dsonar.password=root \
                                                 -DskipTests
                                             """
                                         }
@@ -119,9 +119,11 @@ pipeline {
             steps {
                 dir('deploy') {
                     echo 'Création et déploiement des conteneurs Docker...'
-                    sh 'docker-compose up -d --build'
+                    sh 'docker compose up -d --build'
                 }
             }
         }
     }
 }
+
+
