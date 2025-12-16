@@ -4,8 +4,8 @@ COPY ./src ./src
 COPY ./pom.xml .
 RUN mvn clean package -DskipTests
 
-FROM openjdk:17-jdk-alpine
+FROM eclipse-temurin:17-jre
 VOLUME /tmp
 ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} client-service.jar
+COPY --from=builder /app/target/*.jar client-service.jar
 ENTRYPOINT ["java","-jar","/client-service.jar"]
