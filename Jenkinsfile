@@ -8,7 +8,7 @@ pipeline {
     environment {
         // Force Java 17 to match local compatible version and fix Lombok issues
         JAVA_HOME = '/Users/mahdi/Library/Java/JavaVirtualMachines/ms-17.0.17/Contents/Home'
-        PATH = "${JAVA_HOME}/bin:${env.PATH}"
+        PATH = "${JAVA_HOME}/bin:/usr/local/bin:${env.PATH}"
     }
 
     stages {
