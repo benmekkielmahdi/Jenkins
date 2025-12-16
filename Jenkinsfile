@@ -47,6 +47,8 @@ pipeline {
                                                 -Dsonar.projectKey=car \
                                                 -Dsonar.projectName=car \
                                                 -Dsonar.host.url=http://127.0.0.1:9000 \
+                                                -Dsonar.login=admin \
+                                                -Dsonar.password=admin \
                                                 -DskipTests
                                             """
                                         }
@@ -81,6 +83,8 @@ pipeline {
                                                 -Dsonar.projectKey=client \
                                                 -Dsonar.projectName=client \
                                                 -Dsonar.host.url=http://127.0.0.1:9000 \
+                                                -Dsonar.login=admin \
+                                                -Dsonar.password=admin \
                                                 -DskipTests
                                             """
                                         }
